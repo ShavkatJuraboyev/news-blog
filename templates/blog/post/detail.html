@@ -2,10 +2,11 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-    <p class="date">
-        Published {{ post.publish }} by {{ post.author }}
-    </p>
+<h1>{{ post.title }}</h1>
+<small class="date">
+    Published {{ post.publish }} by {{ post.author }}
+</small>
 
-    {{ post.body|linebreaks }}
+<p> {{ post.body|linebreaks }}</p>
+
 {% endblock %}

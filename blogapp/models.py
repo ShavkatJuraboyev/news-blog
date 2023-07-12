@@ -22,7 +22,7 @@ class Post(models.Model):
     publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    status = models.CharField(max_length=10,choices=STATUS_CHOICES, default='draft')
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
 
     class Meta:
         ordering = ('-publish',)
@@ -38,11 +38,3 @@ class Post(models.Model):
                                                  self.publish.month,
                                                  self.publish.day,
                                                  self.slug])
-
-
-posts = Post.objects.filter(status='published')
-p_posts = Post.published.all()
-
-
-
-
